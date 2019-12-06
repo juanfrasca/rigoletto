@@ -3,6 +3,8 @@ package com.proyectoegg.rigoletto.entidades;
 import com.proyectoegg.rigoletto.enumeraciones.TipoUsuario;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
@@ -33,7 +35,7 @@ public class Usuario {
 
     private String zona;
 
-    @Column (nullable = false)
+    @Enumerated(EnumType.STRING)
     private TipoUsuario tipoUsuario;
 
     public void crearUsuario() {

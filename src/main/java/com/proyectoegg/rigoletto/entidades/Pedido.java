@@ -7,9 +7,15 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 
@@ -20,16 +26,17 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPedido;
     
-    @Column (nullable = false)
+    @ManyToOne
     private Usuario usuario;
 
     @Column (nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_hora;
 
-    @Column (nullable = false)
+    @Enumerated(EnumType.STRING)
     private MedioDePago medioPago;
 
-    @Column (nullable = false)
+    @Enumerated(EnumType.STRING)
     private Estado estado;
 
     @Column (nullable = false)
@@ -38,10 +45,11 @@ public class Pedido {
     @Column (nullable = false)
     private Long telefono;
 
-    @Column (nullable = false)
+    @Enumerated(EnumType.STRING)
     private TipoEntrega tipoEntrega;
 
     @Column (nullable = false)
+    @OneToMany
     private List<DetallePedido> productos;
 
     public void crearPedido() {

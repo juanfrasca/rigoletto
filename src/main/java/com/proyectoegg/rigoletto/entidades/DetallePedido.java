@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class DetallePedido {
@@ -13,7 +14,7 @@ public class DetallePedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idDetallePedido;
     
-    @Column (nullable = false)
+    @ManyToOne
     private Producto producto;
 
     @Column (nullable = false)
