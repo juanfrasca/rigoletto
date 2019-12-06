@@ -1,5 +1,6 @@
 package com.proyectoegg.rigoletto.entidades;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,9 +12,11 @@ public class DetallePedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idDetallePedido;
-
+    
+    @Column (nullable = false)
     private Producto producto;
 
+    @Column (nullable = false)
     private Integer cantidad;
 
     public Integer getIdDetallePedido() {

@@ -5,6 +5,7 @@ import com.proyectoegg.rigoletto.enumeraciones.MedioDePago;
 import com.proyectoegg.rigoletto.enumeraciones.TipoEntrega;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,21 +19,29 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPedido;
-
+    
+    @Column (nullable = false)
     private Usuario usuario;
 
+    @Column (nullable = false)
     private Date fecha_hora;
 
+    @Column (nullable = false)
     private MedioDePago medioPago;
 
+    @Column (nullable = false)
     private Estado estado;
 
+    @Column (nullable = false)
     private String domicilio;
 
+    @Column (nullable = false)
     private Long telefono;
 
+    @Column (nullable = false)
     private TipoEntrega tipoEntrega;
 
+    @Column (nullable = false)
     private List<DetallePedido> productos;
 
     public void crearPedido() {

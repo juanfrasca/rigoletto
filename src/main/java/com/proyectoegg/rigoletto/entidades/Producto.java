@@ -1,6 +1,7 @@
 package com.proyectoegg.rigoletto.entidades;
 
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -15,8 +16,10 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idProducto;
 
+    @Column (nullable = false)
     private String nombre;
 
+    @Column (nullable = false)
     private Double precio;
 
     @Lob @Basic(fetch = FetchType.LAZY)

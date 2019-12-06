@@ -1,6 +1,7 @@
 package com.proyectoegg.rigoletto.entidades;
 
 import com.proyectoegg.rigoletto.enumeraciones.TipoUsuario;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,20 +15,25 @@ public class Usuario {
     @GenericGenerator(name = "uuid",strategy = "uuid2")
     private String idUsuario;
     
+    @Column (nullable = false)
     private String nombre;
 
+    @Column (nullable = false)
     private String apellido;
 
     private String domicilio;
 
     private Long telefono;
 
+    @Column (nullable = false)
     private String email;
 
+    @Column (nullable = false)
     private String clave;
 
     private String zona;
 
+    @Column (nullable = false)
     private TipoUsuario tipoUsuario;
 
     public void crearUsuario() {
