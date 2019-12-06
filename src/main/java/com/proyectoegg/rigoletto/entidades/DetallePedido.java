@@ -1,3 +1,4 @@
+package com.proyectoegg.rigoletto.entidades;
 public class DetallePedido {
 
     private Integer idDetallePedido;

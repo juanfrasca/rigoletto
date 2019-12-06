@@ -1,9 +1,11 @@
+package com.proyectoegg.rigoletto.entidades;
 
+import com.proyectoegg.rigoletto.enumeraciones.Estado;
+import com.proyectoegg.rigoletto.enumeraciones.MedioDePago;
+import com.proyectoegg.rigoletto.enumeraciones.TipoEntrega;
 import java.util.Date;
 import java.util.List;
-//holis
-// holis 
-//asd
+
 
 
 public class Pedido {

@@ -1,3 +1,7 @@
+package com.proyectoegg.rigoletto.entidades;
+
+import com.proyectoegg.rigoletto.enumeraciones.TipoUsuario;
+
 public class Usuario {
 
     private String nombre;
