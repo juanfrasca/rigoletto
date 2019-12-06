@@ -1,9 +1,13 @@
 package com.proyectoegg.rigoletto.entidades;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Producto {
+
+    @Id
+    private Integer idProducto;
 
     private String nombre;
 
@@ -11,7 +15,6 @@ public class Producto {
 
     private byte[] foto;
 
-    private Integer idProducto;
 
     public void crearProducto() {
     }

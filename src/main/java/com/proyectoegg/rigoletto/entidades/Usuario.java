@@ -2,9 +2,12 @@ package com.proyectoegg.rigoletto.entidades;
 
 import com.proyectoegg.rigoletto.enumeraciones.TipoUsuario;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 @Entity
 public class Usuario {
 
+    @Id
+    private String idUsuario;
     private String nombre;
 
     private String apellido;
@@ -19,7 +22,7 @@ public class Usuario {
 
     private String zona;
 
-    private String idUsuario;
+    
 
     private TipoUsuario tipoUsuario;
 

@@ -1,10 +1,12 @@
 package com.proyectoegg.rigoletto.entidades;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class DetallePedido {
 
+    @Id
     private Integer idDetallePedido;
 
     private Producto producto;
