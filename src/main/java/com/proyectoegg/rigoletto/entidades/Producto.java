@@ -17,15 +17,19 @@ public class Producto {
 
 
     public void crearProducto() {
+    /*Esto va en el paquete de Servicios*/
     }
 
     public void modificarProducto() {
+    /*Esto va en el paquete de Servicios*/
     }
 
     public void borrarProducto() {
+    /*Esto va en el paquete de Servicios*/
     }
 
     public void listarProducto() {
+    /*Esto va en el paquete de Servicios*/
     }
 
     public String getNombre() {

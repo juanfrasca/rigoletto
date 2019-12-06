@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -32,19 +33,28 @@ public class Pedido {
     private List<DetallePedido> productos;
 
     public void crearPedido() {
+    /*Esto va en el paquete de Servicios*/
     }
 
     public void modificarPedido() {
+    /*Esto va en el paquete de Servicios*/
     }
 
     public void borrarPedido() {
+    /*Esto va en el paquete de Servicios*/
     }
 
     public void listarPedido() {
+    /*Esto va en el paquete de Servicios*/
     }
-
+    
+    @Transient
     public double getmontoTotal() {
-        throw new UnsupportedOperationException("El monto total no es el correcto.");
+        double monto = 0;
+        for (DetallePedido producto : productos) {
+            monto += producto.getCantidad()*producto.getProducto().getPrecio();
+        }
+        return monto;
     }
 
     public Integer getIdPedido() {
