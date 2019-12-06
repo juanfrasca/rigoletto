@@ -48,7 +48,6 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     private TipoEntrega tipoEntrega;
 
-    @Column (nullable = false)
     @OneToMany
     private List<DetallePedido> productos;
 
