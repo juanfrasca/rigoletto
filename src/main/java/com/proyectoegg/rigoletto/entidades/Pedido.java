@@ -5,9 +5,10 @@ import com.proyectoegg.rigoletto.enumeraciones.MedioDePago;
 import com.proyectoegg.rigoletto.enumeraciones.TipoEntrega;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
 
 
-
+@Entity
 public class Pedido {
 
     private Integer idPedido;
@@ -41,7 +42,7 @@ public class Pedido {
     }
 
     public double getmontoTotal() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("El monto total no es el correcto.");
     }
 
     public Integer getIdPedido() {

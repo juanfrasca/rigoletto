@@ -1,7 +1,8 @@
 package com.proyectoegg.rigoletto.entidades;
 
 import com.proyectoegg.rigoletto.enumeraciones.TipoUsuario;
-
+import javax.persistence.Entity;
+@Entity
 public class Usuario {
 
     private String nombre;

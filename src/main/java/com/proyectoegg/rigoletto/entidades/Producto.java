@@ -1,4 +1,8 @@
 package com.proyectoegg.rigoletto.entidades;
+
+import javax.persistence.Entity;
+
+@Entity
 public class Producto {
 
     private String nombre;
