@@ -2,12 +2,16 @@ package com.proyectoegg.rigoletto.entidades;
 
 import com.proyectoegg.rigoletto.enumeraciones.TipoUsuario;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Usuario {
 
     @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid",strategy = "uuid2")
     private String idUsuario;
     
     private String nombre;

@@ -1,18 +1,25 @@
 package com.proyectoegg.rigoletto.entidades;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Producto {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idProducto;
 
     private String nombre;
 
     private Double precio;
 
+    @Lob @Basic(fetch = FetchType.LAZY)
     private byte[] foto;
 
 
