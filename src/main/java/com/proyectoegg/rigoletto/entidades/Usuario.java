@@ -25,7 +25,7 @@ public class Usuario {
 
     private String domicilio;
 
-    private Long telefono;
+    private String telefono;
 
     @Column (nullable = false)
     private String email;
@@ -93,14 +93,14 @@ public class Usuario {
         this.domicilio = domicilio;
     }
 
-    public Long getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
     /**
      * @param telefono the telefono to set
      */
-    public void setTelefono(Long telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

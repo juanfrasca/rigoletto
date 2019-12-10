@@ -46,12 +46,13 @@ public class UsuarioServicios {
             
         }
         
-        if(email == null || email.isEmpty()){
-            throw new ErrorServicio("El email no puede ser nulo.");
+        if(email == null || email.isEmpty() || email.contains("@") || email.indexOf('.') < 0){
+            throw new ErrorServicio("El email no puede ser nulo o email es invalido.");
+           
         }
         
         if( clave == null || clave.isEmpty() || clave.length() <=3 || clave.length()>=8 ){
-            
+            throw new ErrorServicio("La clave no puede ser nula tiene que tener mas de 3 digitos y menos de 8 digitos.");   
         }
     }
 }
