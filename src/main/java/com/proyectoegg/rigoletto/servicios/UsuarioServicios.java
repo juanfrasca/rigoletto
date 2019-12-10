@@ -14,7 +14,7 @@ public class UsuarioServicios {
     UsuarioRepositorio usuariorepositorio;
     
     @Transactional
-    public void registrar(String nombre, String apellido, String domicilio, Long telefono, String email, String clave, String zona) throws ErrorServicio{
+    public void registrar(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio{
         
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
@@ -28,7 +28,7 @@ public class UsuarioServicios {
         
     }
     
-    private void validar(String nombre, String apellido, String domicilio, Long telefono, String email, String clave, String zona) throws ErrorServicio {
+    private void validar(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
         
         if( nombre == null || nombre.isEmpty()){
             throw new ErrorServicio ("El nombre de usuario no puede ser nulo.");
@@ -42,7 +42,8 @@ public class UsuarioServicios {
             throw new ErrorServicio("El domicilio no puede ser nulo.");
         }
         
-        if( telefono == null || telefono.){
+        if( telefono == null || telefono.isEmpty() || telefono.length() <10 || telefono.length() >10){
+            throw new ErrorServicio("El telefono no puede ser nulo o el telefono no puede tener menos de 10 digitos y tampoco mas.");
             
         }
         
