@@ -4,6 +4,8 @@ import com.proyectoegg.rigoletto.entidades.Usuario;
 import com.proyectoegg.rigoletto.errores.ErrorServicio;
 import com.proyectoegg.rigoletto.repositorios.UsuarioRepositorio;
 import java.util.Optional;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,9 @@ public class UsuarioServicios {
 
     @Autowired
     UsuarioRepositorio usuariorepositorio;
+
+    @PersistenceContext
+    private EntityManager em;
 
     @Transactional
     public void registrar(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
@@ -48,11 +53,24 @@ public class UsuarioServicios {
 
             usuariorepositorio.save(usuario);
         } else {
-           throw new ErrorServicio("No se a encontrado el usuario solicitado.");
+            throw new ErrorServicio("No se a encontrado el usuario solicitado.");
         }
-        
-        
 
+    }
+
+    @Transactional
+    public void eliminar(String id) throws ErrorServicio {
+        Usuario usuario = buscarUsuarios(id);
+        em.remove(id);
+    }
+    /*
+     Juan no se si se puede realizar asi es para eliminar el usuario
+     peron se me ocurre que podria utilizar esto para ir eliminando el pedido
+     lo saque de la ultima libreria que subio el Eze  
+     */
+
+    public Usuario buscarUsuarios(String id) {
+        return em.find(Usuario.class, id);
     }
 
     private void validar(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {

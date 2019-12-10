@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
-    //aca podriamos validar el pedido se me ocurre como traes el nonbre por apellido y clon
-    //con el detalle del pedido
+    //aca podriamos validar el pedido se me ocurre el nombre ordenado por apellido  
+    //con el detalle del pedido donde se unen las dos tablas y con el id del usuario 
     @Query("SELECT c FROM Usuario c WHERE c.nombre LIKE %:q% OR c.apellido LIKE %:q%")
     public List<Usuario> buscarUsuario(@Param("q") String q);
     
@@ -20,5 +20,7 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
     
     @Query("SELECT c FROM Usuario c WHERE c.clave = :clave")
     public Usuario buscarPorClave(@Param("clave") String clave);
+    
+    
 
 }
