@@ -9,7 +9,16 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
-
+    //aca podriamos validar el pedido se me ocurre como traes el nonbre por apellido y clon
+    //con el detalle del pedido
     @Query("SELECT c FROM Usuario c WHERE c.nombre LIKE %:q% OR c.apellido LIKE %:q%")
     public List<Usuario> buscarUsuario(@Param("q") String q);
+    
+    //Juan aca va el buscar por mail y buscar por clave para poder validar el usuario
+    @Query("SELECT c FROM Usuario c WHERE c.email = :email")
+    public Usuario buscarPorMail(@Param("email") String email);
+    
+    @Query("SELECT c FROM Usuario c WHERE c.clave = :clave")
+    public Usuario buscarPorClave(@Param("clave") String clave);
+
 }
