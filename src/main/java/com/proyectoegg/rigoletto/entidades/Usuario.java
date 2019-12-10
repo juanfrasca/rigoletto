@@ -89,16 +89,10 @@ public class Usuario {
         return domicilio;
     }
 
-    /**
-     * @param domicilio the domicilio to set
-     */
     public void setDomicilio(String domicilio) {
         this.domicilio = domicilio;
     }
 
-    /**
-     * @return the telefono
-     */
     public Long getTelefono() {
         return telefono;
     }

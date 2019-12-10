@@ -3,6 +3,7 @@ package com.proyectoegg.rigoletto.entidades;
 import com.proyectoegg.rigoletto.enumeraciones.Estado;
 import com.proyectoegg.rigoletto.enumeraciones.MedioDePago;
 import com.proyectoegg.rigoletto.enumeraciones.TipoEntrega;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -76,6 +77,7 @@ public class Pedido {
         return monto;
     }
 
+    @Id
     public Integer getIdPedido() {
         return idPedido;
     }
