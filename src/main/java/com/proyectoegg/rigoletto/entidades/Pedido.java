@@ -44,7 +44,7 @@ public class Pedido {
     private String domicilio;
 
     @Column (nullable = false)
-    private Long telefono;
+    private String telefono;
 
     @Enumerated(EnumType.STRING)
     private TipoEntrega tipoEntrega;
@@ -126,11 +126,11 @@ public class Pedido {
         this.domicilio = domicilio;
     }
 
-    public Long getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Long telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
