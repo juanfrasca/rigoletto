@@ -16,6 +16,8 @@ public class UsuarioServicios {
     @Transactional
     public void registrar(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio{
         
+        validar(nombre,apellido,domicilio,telefono,email,clave,zona);
+        
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
         usuario.setApellido(apellido);
@@ -54,6 +56,10 @@ public class UsuarioServicios {
         
         if( clave == null || clave.isEmpty() || clave.length() <=3 || clave.length()>=8 ){
             throw new ErrorServicio("La clave no puede ser nula tiene que tener mas de 3 digitos y menos de 8 digitos.");   
+        }
+        
+        if( zona == null || zona.isEmpty()){
+            throw new ErrorServicio("La zona no puede ser nulo.");
         }
     }
 }
