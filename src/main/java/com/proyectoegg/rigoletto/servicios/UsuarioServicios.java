@@ -1,3 +1,4 @@
+
 package com.proyectoegg.rigoletto.servicios;
 
 import com.proyectoegg.rigoletto.entidades.Usuario;
@@ -23,7 +24,6 @@ public class UsuarioServicios {
     public void crearUsuario(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
 
         validar(nombre, apellido, domicilio, telefono, email, clave, zona);
-
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
         usuario.setApellido(apellido);
@@ -57,9 +57,6 @@ public class UsuarioServicios {
         }
 
     }
-    
-    //@Transactional
-    //public void detallepedido
 
     @Transactional
     public void borrarUsuario(String email) throws ErrorServicio {
@@ -67,7 +64,6 @@ public class UsuarioServicios {
         em.remove(usuario);
     }
     
-
     public Usuario buscarUsuarios(String email) {
         return em.find(Usuario.class, email);
     }
