@@ -1,5 +1,6 @@
 package com.proyectoegg.rigoletto.repositorios;
 
+//import com.proyectoegg.rigoletto.entidades.DetallePedido;
 import com.proyectoegg.rigoletto.entidades.Usuario;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,7 +21,8 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
     
     @Query("SELECT c FROM Usuario c WHERE c.clave = :clave")
     public Usuario buscarPorClave(@Param("clave") String clave);
-    
-    
+   
+    //@Query("SELECT c FROM DetallePedido c WHERE c.id LIKE %"+":producto"+"%"+":cantidad")
+    //public List<DetallePedido> buscarDetalleProducto(@Param("producto,cantidad")String producto,String cantidad);
 
 }

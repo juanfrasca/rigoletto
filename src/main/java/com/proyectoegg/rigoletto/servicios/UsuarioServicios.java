@@ -37,7 +37,7 @@ public class UsuarioServicios {
     }
 
     @Transactional
-    public void Modificar(String id, String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
+    public void modificar(String id, String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
 
         validar(nombre, apellido, domicilio, telefono, email, clave, zona);
         Optional<Usuario> respuesta = usuariorepositorio.findById(id);
@@ -57,6 +57,9 @@ public class UsuarioServicios {
         }
 
     }
+    
+    //@Transactional
+    //public void detallepedido
 
     @Transactional
     public void eliminar(String id) throws ErrorServicio {
