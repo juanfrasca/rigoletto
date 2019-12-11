@@ -20,7 +20,7 @@ public class UsuarioServicios {
     private EntityManager em;
 
     @Transactional
-    public void registrar(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
+    public void crearUsuario(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
 
         validar(nombre, apellido, domicilio, telefono, email, clave, zona);
 
@@ -37,7 +37,7 @@ public class UsuarioServicios {
     }
 
     @Transactional
-    public void modificar(String id, String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
+    public void modificarUsuario(String id, String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
 
         validar(nombre, apellido, domicilio, telefono, email, clave, zona);
         Optional<Usuario> respuesta = usuariorepositorio.findById(id);
@@ -62,7 +62,7 @@ public class UsuarioServicios {
     //public void detallepedido
 
     @Transactional
-    public void eliminar(String id) throws ErrorServicio {
+    public void borrarUsuario(String id) throws ErrorServicio {
         Usuario usuario = buscarUsuarios(id);
         em.remove(usuario);
     }

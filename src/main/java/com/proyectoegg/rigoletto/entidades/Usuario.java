@@ -38,17 +38,17 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private TipoUsuario tipoUsuario;
 
-    public void crearUsuario() {
-    /*Esto va en el paquete de Servicios*/
-    }
+    //public void crearUsuario() {
+    //Esto va en el paquete de Servicios
+    //}
 
-    public void modificarUsuario() {
-    /*Esto va en el paquete de Servicios*/
-    }
+    //public void modificarUsuario() {
+    //Esto va en el paquete de Servicios
+    //}
 
-    public void borrarUsuario() {
-    /*Esto va en el paquete de Servicios*/
-    }
+    //public void borrarUsuario() {
+    //Esto va en el paquete de Servicios
+    //}
 
     public void listarUsuario() {
     /*Esto va en el paquete de Servicios*/
