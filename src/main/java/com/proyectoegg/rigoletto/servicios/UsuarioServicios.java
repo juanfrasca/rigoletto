@@ -63,11 +63,7 @@ public class UsuarioServicios {
         Usuario usuario = buscarUsuarios(id);
         em.remove(usuario);
     }
-    /*
-     Juan no se si se puede realizar asi es para eliminar el usuario
-     peron se me ocurre que podria utilizar esto para ir eliminando el pedido
-     lo saque de la ultima libreria que subio el Eze  
-     */
+    
 
     public Usuario buscarUsuarios(String id) {
         return em.find(Usuario.class, id);
