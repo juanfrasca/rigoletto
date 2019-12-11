@@ -18,7 +18,7 @@ public class LandingControler {
 
     @GetMapping("/")
     public String PaginaPrincipal() throws ErrorServicio {
-        return "pagina1.html";
+        return "index.html";
     }
 
     
