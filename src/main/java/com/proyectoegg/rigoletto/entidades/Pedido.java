@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,13 +22,13 @@ import javax.persistence.Transient;
 
 
 @Entity
-public class Pedido {
+public class Pedido implements Serializable{
 
-    @Id
+    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPedido;
     
-    @ManyToOne
+   
     private Usuario usuario;
 
     @Column (nullable = false)
@@ -49,7 +50,8 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     private TipoEntrega tipoEntrega;
 
-    @OneToMany
+    
+    
     private List<DetallePedido> productos;
 
     public void crearPedido() {
@@ -77,6 +79,7 @@ public class Pedido {
         return monto;
     }
 
+    
     @Id
     public Integer getIdPedido() {
         return idPedido;
@@ -85,7 +88,7 @@ public class Pedido {
     public void setIdPedido(Integer idPedido) {
         this.idPedido = idPedido;
     }
-
+     @ManyToOne(targetEntity = Usuario.class)
     public Usuario getUsuario() {
         return usuario;
     }
@@ -141,7 +144,8 @@ public class Pedido {
     public void setTipoEntrega(TipoEntrega tipoEntrega) {
         this.tipoEntrega = tipoEntrega;
     }
-
+   @OneToMany(targetEntity=DetallePedido.class, mappedBy="producto", 
+fetch=FetchType.EAGER)
     public List<DetallePedido> getProductos() {
         return productos;
     }
