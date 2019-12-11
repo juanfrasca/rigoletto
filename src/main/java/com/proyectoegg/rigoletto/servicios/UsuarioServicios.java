@@ -37,7 +37,7 @@ public class UsuarioServicios {
     }
 
     @Transactional
-    public void modificarUsuario(String id, String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
+    public void modificar(String id, String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
 
         validar(nombre, apellido, domicilio, telefono, email, clave, zona);
         Optional<Usuario> respuesta = usuariorepositorio.findById(id);
@@ -62,14 +62,14 @@ public class UsuarioServicios {
     //public void detallepedido
 
     @Transactional
-    public void borrarUsuario(String id) throws ErrorServicio {
-        Usuario usuario = buscarUsuarios(id);
+    public void borrarUsuario(String email) throws ErrorServicio {
+        Usuario usuario = buscarUsuarios(email);
         em.remove(usuario);
     }
     
 
-    public Usuario buscarUsuarios(String id) {
-        return em.find(Usuario.class, id);
+    public Usuario buscarUsuarios(String email) {
+        return em.find(Usuario.class, email);
     }
 
     private void validar(String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
