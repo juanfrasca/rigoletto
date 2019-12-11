@@ -22,7 +22,7 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
     @Query("SELECT c FROM Usuario c WHERE c.clave = :clave")
     public Usuario buscarPorClave(@Param("clave") String clave);
    
-    //@Query("SELECT c FROM DetallePedido c WHERE c.id LIKE %"+":producto"+"%"+":cantidad")
+    //@Query("SELECT c FROM DetallePedido c WHERE c.idDetallePedido LIKE %"+":producto"+"%"+":cantidad")
     //public List<DetallePedido> buscarDetalleProducto(@Param("producto,cantidad")String producto,String cantidad);
 
 }
