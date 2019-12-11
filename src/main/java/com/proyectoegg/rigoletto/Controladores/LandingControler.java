@@ -1,3 +1,4 @@
+
 package com.proyectoegg.rigoletto.Controladores;
 
 import com.proyectoegg.rigoletto.errores.ErrorServicio;
@@ -21,14 +22,13 @@ public class LandingControler {
         return "index.html";
     }
 
-    
     @PostMapping("/registrar")
     public String Registro(@RequestParam String nombre, @RequestParam String apellido, @RequestParam String domicilio, @RequestParam String telefono, @RequestParam String email, @RequestParam String clave, @RequestParam String zona) throws ErrorServicio {
         usuarioservicio.crearUsuario(nombre, apellido, domicilio, telefono, email, clave, zona);
         return "redirect:/";
     }
-    
-     @GetMapping("/eliminar")
+
+    @GetMapping("/eliminar")
     public String eliminar(@RequestParam String id) {
         try {
             usuarioservicio.borrarUsuario(id);
@@ -36,6 +36,6 @@ public class LandingControler {
         } catch (Exception ex) {
             return "redirect:/autor/listado?error=No se pudo eliminar los datos del usuario que desea.";
         }
-    } 
-    
+    }
+
 }
