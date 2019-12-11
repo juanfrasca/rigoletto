@@ -19,13 +19,17 @@ public class DetallePedidoServicios {
     }
 
     public void crearDetallePedido(Producto producto, Integer cantidad) throws ErrorServicio {
+        
+        validarDetalle(producto, cantidad);
         DetallePedido detallepedido = new DetallePedido();
         detallepedido.setProducto(producto);
         detallepedido.setCantidad(cantidad);
         detallepedidorepositorio.save(detallepedido);
+        
     }
 
     public void validarDetalle(Producto producto, Integer cantidad) throws ErrorServicio {
+        
         if (producto == null){
             throw new ErrorServicio("No se ha ingresado ningún producto.");
         }
