@@ -17,15 +17,25 @@ public class LandingControler {
     private UsuarioServicios usuarioservicio;
 
     @GetMapping("/")
-    public String Pagina1() throws ErrorServicio {
-        return "";
+    public String PaginaPrincipal() throws ErrorServicio {
+        return "pagina1.html";
     }
 
+    
     @PostMapping("/registrar")
     public String Registro(@RequestParam String nombre, @RequestParam String apellido, @RequestParam String domicilio, @RequestParam String telefono, @RequestParam String email, @RequestParam String clave, @RequestParam String zona) throws ErrorServicio {
-        usuarioservicio.registrar(nombre, apellido, domicilio, telefono, email, clave, zona);
+        usuarioservicio.crearUsuario(nombre, apellido, domicilio, telefono, email, clave, zona);
         return "redirect:/";
     }
     
+     @GetMapping("/eliminar")
+    public String eliminar(@RequestParam String id) {
+        try {
+            usuarioservicio.borrarUsuario(id);
+            return "redirect:/autor/listado";
+        } catch (Exception ex) {
+            return "redirect:/autor/listado?error=No se pudo eliminar los datos del usuario que desea.";
+        }
+    } 
     
 }
