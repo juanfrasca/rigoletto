@@ -61,7 +61,7 @@ public class UsuarioServicios {
     @Transactional
     public void eliminar(String id) throws ErrorServicio {
         Usuario usuario = buscarUsuarios(id);
-        em.remove(id);
+        em.remove(usuario);
     }
     /*
      Juan no se si se puede realizar asi es para eliminar el usuario
