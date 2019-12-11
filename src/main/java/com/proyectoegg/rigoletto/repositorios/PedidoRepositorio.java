@@ -14,3 +14,4 @@ public interface PedidoRepositorio extends JpaRepository<Pedido, Integer>{
     @Query("SELECT c FROM Pedido c WHERE c.usuario=:q")
     public List<Pedido> buscarPedido(@Param("q") Usuario q);
 }
+adsfhyiuaydfhsdifjisldfjsdlfjsdlfkj
