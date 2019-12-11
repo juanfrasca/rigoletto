@@ -1,3 +1,4 @@
+
 package com.proyectoegg.rigoletto.repositorios;
 
 import com.proyectoegg.rigoletto.entidades.Producto;
@@ -12,4 +13,5 @@ public interface ProductoRepositorio extends JpaRepository<Producto, Integer> {
 
     @Query("SELECT c FROM Producto c WHERE c.nombre LIKE %:q%")
     public List<Producto> buscarProducto(@Param("q") String q);
+    
 }
