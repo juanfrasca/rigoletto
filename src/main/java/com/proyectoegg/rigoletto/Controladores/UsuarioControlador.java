@@ -6,6 +6,7 @@ import com.proyectoegg.rigoletto.repositorios.UsuarioRepositorio;
 import com.proyectoegg.rigoletto.servicios.UsuarioServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,15 @@ public class UsuarioControlador {
     @Autowired
     private UsuarioRepositorio user;
 
+     @GetMapping("/registro")
+    public String registro() throws ErrorServicio {
+        return "registro.html";
+    }
+     @GetMapping("/logear")
+    public String logear() throws ErrorServicio {
+        return "login.html";
+    }
+    
     @PostMapping("/registrar")
     public String registrar(@RequestParam String nombre, @RequestParam String apellido, @RequestParam String domicilio, @RequestParam String telefono, @RequestParam String email, @RequestParam String clave, @RequestParam String zona) throws ErrorServicio {
         us.crearUsuario(nombre, apellido, domicilio, telefono, email, clave, zona);
