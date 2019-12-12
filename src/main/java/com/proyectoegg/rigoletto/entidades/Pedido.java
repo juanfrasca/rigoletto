@@ -1,3 +1,4 @@
+
 package com.proyectoegg.rigoletto.entidades;
 
 import com.proyectoegg.rigoletto.enumeraciones.Estado;
@@ -18,7 +19,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 @Entity
 public class Pedido implements Serializable {
@@ -69,6 +69,7 @@ public class Pedido implements Serializable {
         /*Esto va en el paquete de Servicios*/
     }
 
+    /*
     @Transient
     public double getmontoTotal() {
         double monto = 0;
@@ -77,7 +78,8 @@ public class Pedido implements Serializable {
         }
         return monto;
     }
-
+    */
+    
     public Integer getIdPedido() {
         return idPedido;
     }
