@@ -20,18 +20,17 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-
 @Entity
-public class Pedido implements Serializable{
+public class Pedido implements Serializable {
 
-    
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPedido;
-    
-   
+
+    @ManyToOne(targetEntity = Usuario.class)
     private Usuario usuario;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_hora;
 
@@ -41,46 +40,44 @@ public class Pedido implements Serializable{
     @Enumerated(EnumType.STRING)
     private Estado estado;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String domicilio;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String telefono;
 
     @Enumerated(EnumType.STRING)
     private TipoEntrega tipoEntrega;
 
-    
-    
+    @OneToMany(targetEntity = DetallePedido.class, mappedBy = "producto",
+            fetch = FetchType.EAGER)
     private List<DetallePedido> productos;
 
     public void crearPedido() {
-    /*Esto va en el paquete de Servicios*/
+        /*Esto va en el paquete de Servicios*/
     }
 
     public void modificarPedido() {
-    /*Esto va en el paquete de Servicios*/
+        /*Esto va en el paquete de Servicios*/
     }
 
     public void borrarPedido() {
-    /*Esto va en el paquete de Servicios*/
+        /*Esto va en el paquete de Servicios*/
     }
 
     public void listarPedido() {
-    /*Esto va en el paquete de Servicios*/
+        /*Esto va en el paquete de Servicios*/
     }
-    
+
     @Transient
     public double getmontoTotal() {
         double monto = 0;
         for (DetallePedido producto : productos) {
-            monto += producto.getCantidad()*producto.getProducto().getPrecio();
+            monto += producto.getCantidad() * producto.getProducto().getPrecio();
         }
         return monto;
     }
 
-    
-    @Id
     public Integer getIdPedido() {
         return idPedido;
     }
@@ -88,7 +85,7 @@ public class Pedido implements Serializable{
     public void setIdPedido(Integer idPedido) {
         this.idPedido = idPedido;
     }
-     @ManyToOne(targetEntity = Usuario.class)
+
     public Usuario getUsuario() {
         return usuario;
     }
@@ -144,8 +141,7 @@ public class Pedido implements Serializable{
     public void setTipoEntrega(TipoEntrega tipoEntrega) {
         this.tipoEntrega = tipoEntrega;
     }
-   @OneToMany(targetEntity=DetallePedido.class, mappedBy="producto", 
-fetch=FetchType.EAGER)
+
     public List<DetallePedido> getProductos() {
         return productos;
     }
