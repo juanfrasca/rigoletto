@@ -26,14 +26,14 @@ public class LandingControler {
     
     
 
-    /*@GetMapping("/eliminar")
+    @GetMapping("/eliminar")
     public String eliminar(@RequestParam String id) {
         try {
             usuarioservicio.borrarUsuario(id);
             return "redirect:/autor/listado";
         } catch (Exception ex) {
             return "redirect:/autor/listado?error=No se pudo eliminar los datos del usuario que desea.";
-        }*/
+        }
     }
 
 }
