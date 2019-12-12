@@ -1,3 +1,4 @@
+
 package com.proyectoegg.rigoletto.entidades;
 
 import javax.persistence.Column;
