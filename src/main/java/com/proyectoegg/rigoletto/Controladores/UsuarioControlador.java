@@ -1,4 +1,4 @@
-package com.proyectoegg.rigoletto.Controladores.UsuarioController;
+package com.proyectoegg.rigoletto.Controladores;
 
 import com.proyectoegg.rigoletto.entidades.Usuario;
 import com.proyectoegg.rigoletto.errores.ErrorServicio;
