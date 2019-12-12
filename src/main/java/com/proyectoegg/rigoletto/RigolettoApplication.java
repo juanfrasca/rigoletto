@@ -1,3 +1,4 @@
+
 package com.proyectoegg.rigoletto;
 
 import org.springframework.boot.SpringApplication;
