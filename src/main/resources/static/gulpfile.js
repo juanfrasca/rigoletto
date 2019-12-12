@@ -1,10 +1,10 @@
 "use strict";
 
 // Load plugins
-const browsersync = require("browser-sync").create();
-const del = require("del");
-const gulp = require("gulp");
-const merge = require("merge-stream");
+/*const*/browsersync = require("browser-sync").create();
+/*const*/del = require("del");
+/*const*/gulp = require("gulp");
+/*const*/merge = require("merge-stream");
 
 // BrowserSync
 function browserSync(done) {
@@ -49,9 +49,9 @@ function watchFiles() {
 }
 
 // Define complex tasks
-const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor);
-const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
+/*const*/vendor = gulp.series(clean, modules);
+/*const*/build = gulp.series(vendor);
+/*const*/watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
 exports.clean = clean;
