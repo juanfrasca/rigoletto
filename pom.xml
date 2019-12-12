@@ -62,6 +62,11 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+                <dependency>
+            <groupId> com.mercadopago </groupId>
+            <artifactId> dx-java </artifactId>
+            <version> 1.0.33 </version>
+             </dependency>
 	</dependencies>
 
 	<build>
