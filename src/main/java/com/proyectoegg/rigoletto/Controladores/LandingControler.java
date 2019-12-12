@@ -25,8 +25,6 @@ public class LandingControler {
         return "login.html";
     }
     
-    
-
     /*@GetMapping("/eliminar")
     public String eliminar(@RequestParam String id) {
         try {
@@ -34,7 +32,8 @@ public class LandingControler {
             return "redirect:/autor/listado";
         } catch (Exception ex) {
             return "redirect:/autor/listado?error=No se pudo eliminar los datos del usuario que desea.";
-        }*/
+        }
     }
+    */ 
 
 }
