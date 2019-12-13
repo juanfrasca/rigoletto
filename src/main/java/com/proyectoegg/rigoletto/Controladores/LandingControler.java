@@ -30,6 +30,10 @@ public class LandingControler {
     public String loginL() {
         return "indexL.html";
     }
+    @GetMapping("/listado")
+    public String listado() {
+        return "ejemplolistado.html";
+    }
     
     @GetMapping("/eliminar")
     public String eliminar(@RequestParam String id) {
