@@ -87,7 +87,7 @@ public class UsuarioServicios {
 
         }
 
-        if (email == null || email.isEmpty() || email.contains("@") || email.indexOf('.') < 0) {
+        if (email == null || email.isEmpty()) {
             throw new ErrorServicio("El email no puede ser nulo o email es invalido.");
 
         }

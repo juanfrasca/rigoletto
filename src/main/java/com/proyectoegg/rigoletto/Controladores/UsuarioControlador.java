@@ -25,18 +25,17 @@ public class UsuarioControlador {
     public String registro() throws ErrorServicio {
         return "registro.html";
     }
-     @GetMapping("/logear")
-    public String logear() throws ErrorServicio {
-        return "login.html";
-    }
+     
     
     @PostMapping("/registrar")
     public String registrar(@RequestParam String nombre, @RequestParam String apellido, @RequestParam String domicilio, @RequestParam String telefono, @RequestParam String email, @RequestParam String clave, @RequestParam String zona) throws ErrorServicio {
+        System.out.println("hola");
         us.crearUsuario(nombre, apellido, domicilio, telefono, email, clave, zona);
-        return "redirect:/index";
+        return "redirect:/login";
         
     }
     
+      
     @PostMapping("/ingreso")
     public String login(@RequestParam String email, @RequestParam String clave) throws ErrorServicio {
 
