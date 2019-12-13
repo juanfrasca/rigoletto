@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RIGOLETTO</title>
+    <link rel="shortcut icon" href="img/PIZZA.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body background="img/descarga.jpg">
+
+    <!-- ------------------- -->
+    <!-- BARRA DE NAVEGACION -->
+    <!-- ------------------- -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" darata-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">                   
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: white" href="/rigoletto/usuario/modificar">Editar Datos</a>
+                    </li>
+                    <li class="nav-item">
+                        <h5>Nombre usuario</h5>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ------------------- -->
+    <!--  TODO EL CONTENIDO  -->
+    <!-- ------------------- -->
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+                <!-- ------------------- -->
+                <!-- SELECCIONAR SECCION -->
+                <!-- ------------------- -->
+
+
+            <div class="col-lg-3" style="background-color: rgba(255, 255, 255, 0.900);">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="list-group" style="position: fixed;">
+                            <h1 class="my-4">RIGOLETTO</h1>
+                            <a href="#promos " class="list-group-item js-scroll-trigger">PROMOS</a>
+                            <a href="#Hamburguesa " class="list-group-item js-scroll-trigger">HAMBURGUESAS</a>
+                            <a href="#lomos" class="list-group-item">LOMOS</a>
+                            <a href="#pizza" class="list-group-item">PIZZAS</a>
+                            <a href="#pancho" class="list-group-item">PANCHOS</a>
+                        </div>
+                    </div>
+
+                        <!-- ------------------- -->
+                        <!-- CARRITO DE COMPRAS  -->
+                        <!-- ------------------- -->
+
+
+
+                    <div class="col-lg-9" style="margin-top: 340px;">
+                        <div class="container" style="position: fixed; ">
+                            <div class="row">
+                                <!-- Elementos generados a partir del JSON -->
+                                <main id="items" class="col-sm-12 row"></main>
+                                <!-- Carrito -->
+                                <aside class="col-sm-4">
+                                    <h2 style="color: rgb(0, 0, 0);">Carrito</h2>
+                                    <!-- Elementos del carrito -->
+                                    <ul id="carrito" class="list-group"></ul>
+                                    
+                                    <!-- Precio total -->
+                                    <p class="text-rigth" style="color: rgb(0, 0, 0);">Total: <span id="total"></span>&euro;</p>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <!-- ------------------- -->
+                <!-- CAROUSEL CON PROMOS -->
+                <!-- ------------------- -->
+
+            <div class="col-lg-9">
+
+                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="img/pancho.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/hambur1.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/lomo.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                    <!-- ------------------- -->
+                    <!--  SECCION DE PROMOS  -->
+                    <!-- ------------------- -->
+
+
+                <section id="promos">
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top: 60px;">
+                            <h1 style="background-color: rgba(255, 255, 255, 0.900);">PROMOCIONES</h1>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.900);">
+                            <a href="#"><img class="card-img-top" src="img/combosuli.png" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa simple</a>
+                                </h4>
+                                <h5>$195</h5>
+                                <p class="card-text">Carne, lechuga, tomate y queso</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.900);">
+                            <a href="#"><img class="card-img-top" src="img/combosuli.png" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa doble</a>
+                                </h4>
+                                <h5>$250</h5>
+                                <p class="card-text">Doble medallón de carne, lechuga, tomate y queso</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.900);">
+                            <a href="#"><img class="card-img-top" src="img/combosuli.png" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa super</a>
+                                </h4>
+                                <h5>$300</h5>
+                                <p class="card-text">Doble medallón de carne, lechuga, tomate, queso y huevo
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.900);">
+                            <a href="#"><img class="card-img-top" src="img/combosuli.png" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa simple + papas + gaseosa</a>
+                                </h4>
+                                <h5>$260</h5>
+                                <p class="card-text">Carne, lechuga, tomate y queso + papas + gaseosa
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.900);">
+                            <a href="#"><img class="card-img-top" src="img/combosuli.png" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa doble + papas + gaseosa</a>
+                                </h4>
+                                <h5>$300</h5>
+                                <p class="card-text">Doble medallón de carne, lechuga, tomate, queso y huevo + papas
+                                + gaseosa</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.900);">
+                            <a href="#"><img class="card-img-top" src="img/combosuli.png" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa super + papas + gaseosa</a>
+                                </h4>
+                                <h5>$350</h5>
+                                <p class="card-text">Doble medallón de carne, lechuga, tomate, queso y huevo + papas + gaseosa
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                    <!-- ------------------- -->
+                    <!-- SECCION DE HAMBURGS -->
+                    <!-- ------------------- -->
+
+
+                <section id="Hamburguesa">
+
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top: 60px;">
+                            <h1 style="background-color: rgba(255, 255, 255, 0.795);">Hamburguesas</h1>
+                        </div>
+                    </div>
+
+                </section>
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                            <a href="#"><img class="card-img-top" src="img/hambur.jpg" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa simple</a>
+                                </h4>
+                                <h5>$195</h5>
+                                <p class="card-text">Carne, lechuga, tomate y queso</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                            <a href="#"><img class="card-img-top" src="img/hamburdoble.jpg" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa doble</a>
+                                </h4>
+                                <h5>$245</h5>
+                                <p class="card-text">Doble medallón de carne, lechuga, tomate y queso</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                            <a href="#"><img class="card-img-top" src="img/hambursuper.jpg" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa super</a>
+                                </h4>
+                                <h5>$295</h5>
+                                <p class="card-text">Doble medallón de carne, lechuga, tomate, queso y huevo
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                            <a href="#"><img class="card-img-top" src="img/hambur+p+g.jpg" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa simple + papas + gaseosa</a>
+                                </h4>
+                                <h5>$245</h5>
+                                <p class="card-text">Carne, lechuga, tomate y queso + papas + gaseosa
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                            <a href="#"><img class="card-img-top" src="img/hamburdoble+p+g.jpg" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa doble + papas + gaseosa</a>
+                                </h4>
+                                <h5>$295</h5>
+                                <p class="card-text">Doble medallón de carne, lechuga, tomate y queso + papas + gaseosa</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                            <a href="#"><img class="card-img-top" src="img/hambursuper+p+g.jpg" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">Hamburguesa super + papas + gaseosa</a>
+                                </h4>
+                                <h5>$345</h5>
+                                <p class="card-text">Doble medallón de carne, lechuga, tomate, queso y huevo + papas + gaseosa
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ------------------- -->
+                <!--   SECCION DE LOMOS  -->
+                <!-- ------------------- -->
+
+                <section id="lomos">
+
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 60px;">
+                                <h1 style="background-color: rgba(255, 255, 255, 0.5);">LOMOS</h1>
+                            </div>
+                        </div>
+    
+                    </section>
+    
+                    <div class="row">
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/lomo1.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Lomo simple</a>
+                                    </h4>
+                                    <h5>$350</h5>
+                                    <p class="card-text">Carne, lechuga, queso, jamón y huevo</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/lomoextra.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Lomo extra</a>
+                                    </h4>
+                                    <h5>$435</h5>
+                                    <p class="card-text">Lomo de 32cm, carne, lechuga, queso, jamón y huevo</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/lomopizza.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Lomo pizza</a>
+                                    </h4>
+                                    <h5>$700</h5>
+                                    <p class="card-text">Ingredientes pizza, carne, huevo, tomate, queso y jamón
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/lomo+p+g.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Lomo simple + papas + gaseosa</a>
+                                    </h4>
+                                    <h5>$450</h5>
+                                    <p class="card-text">Carne, lechuga, queso, jamón y huevo + papas + gaseosa
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/lomoextra+p+g.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Lomo extra + papas + bebida</a>
+                                    </h4>
+                                    <h5>$550</h5>
+                                    <p class="card-text">Lomo de 32cm, carne, lechuga, queso, jamón y huevo + papas + gaseosa</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/lomopizza+p+g.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Lomo pizza + papas + gaseosa</a>
+                                    </h4>
+                                    <h5>$760</h5>
+                                    <p class="card-text">Ingredientes doble pizza, carne, huevo, tomate, queso y jamón + papas + gaseosa
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- ------------------- -->
+                <!--   SECCION DE PIZZA  -->
+                <!-- ------------------- -->
+
+                <section id="pizza">
+
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 60px;">
+                                <h1 style="background-color: rgba(255, 255, 255, 0.5);">PIZZAS</h1>
+                            </div>
+                        </div>
+    
+                    </section>
+    
+                    <div class="row">
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/pizza123.png" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Hamburguesa</a>
+                                    </h4>
+                                    <h5>$250</h5>
+                                    <p class="card-text">Carne, lechuga, queso y huevo</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/pizza123.png" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Two</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                        Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/pizza123.png" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Three</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/pizza123.png" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Four</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/pizza123.png" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Five</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                        Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/pizza123.png" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Six</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <!-- ------------------- -->
+                <!--   SECCION DE PANCH  -->
+                <!-- ------------------- -->
+
+                <section id="pancho">
+
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top: 60px;">
+                                <h1 style="background-color: rgba(255, 255, 255, 0.5);">PANCHOS</h1>
+                            </div>
+                        </div>
+    
+                    </section>
+    
+                    <div class="row">
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/panchili.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Hamburguesa</a>
+                                    </h4>
+                                    <h5>$250 pichi</h5>
+                                    <p class="card-text">carne lechuga, queso huevo</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/panchili.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Two</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                        Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/panchili.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Three</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/panchili.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Four</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/panchili.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Five</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                        Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100" style="background-color: rgba(255, 255, 255, 0.5);">
+                                <a href="#"><img class="card-img-top" src="img/panchili.jpg" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="#">Item Six</a>
+                                    </h4>
+                                    <h5>$24.99</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+                                        numquam aspernatur!
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                </div> <!-- PEGAR ARRIBA DE ESTE DIV-->
+            </div> 
+
+        <!-- ----------------------- -->
+        <!-- FINAL DEL ROW PRINCIPAL -->
+        <!-- ----------------------- -->
+
+        </div>
+
+    </div>
+
+  
+    <!-- ------------------- -->
+    <!--     FINAL PAGINA    -->
+    <!-- ------------------- -->
+
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Egg Tech - Rigoletto 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

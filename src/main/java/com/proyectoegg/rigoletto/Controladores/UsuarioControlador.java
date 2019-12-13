@@ -25,6 +25,14 @@ public class UsuarioControlador {
     public String registro() throws ErrorServicio {
         return "registro.html";
     }
+     @GetMapping("/modificar")
+    public String modif() throws ErrorServicio {
+        return "editarUsuario.html";
+    }
+     @GetMapping("/logear")
+    public String log() throws ErrorServicio {
+        return "login.html";
+    }
      
     
     @PostMapping("/registrar")
