@@ -8,17 +8,16 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-            <title>Sistema de Prestamo de Libros</title>
+            <title>Sistema de Pedidos</title>
             <meta charset="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
 
         <div class="jumbotron">
-            <h1 class="display-4">Administración de Autores</h1>
-            <p class="lead">Utilice este modulo para administrar la base de datos de autores de libro.</p>
+            <h1 class="display-4">Administración de Pedidos</h1>
+            <p class="lead">Pedidos realizados .</p>
             <hr class="my-4">
-                <a class="btn btn-primary btn-lg" href="/autor/actualizacion" role="button">Crear Autor</a>
         </div>
 
         <div class="alert alert-danger" role="alert" th:if="${error != null}" th:text="${error}"></div>
@@ -26,16 +25,26 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
             <form class="form-inline my-2 my-lg-0" action="/autor/listado" method="GET">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar"  name="q" th:value="${q}">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar <i class="fa fa-search"></i></button>
+          
             </form>
 
         </nav>
         <table class="table">
             <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Domicilio</th>
+                    <th>Pedido</th>
+                </tr>
                 <tr th:each="usuario : ${usuario}">
                     <td th:text="${usuario.nombre}"></td>
                     <td th:text="${usuario.apellido}"></td>
+                    <td th:text="${usuario.telefono}"></td>
+                    <td th:text="${usuario.email}"></td>
+                    <td th:text="${usuario.domicilio}"></td>
                      </tr>
                     
                
