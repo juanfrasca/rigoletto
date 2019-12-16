@@ -55,7 +55,7 @@ public class UsuarioControlador {
                 return "redirect:/l";
             }
         }
-        return "redirect:/registro";
+        return "redirect:/rigoletto/usuario/registro";
     }
 
     @GetMapping("/editarUsuario")
