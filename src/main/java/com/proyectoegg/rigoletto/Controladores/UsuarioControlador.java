@@ -90,9 +90,10 @@ public class UsuarioControlador {
         List<Usuario> usuario;
             usuario = user.findAll();
             
-            modelo.put("usuario", usuario.get(0));
+            modelo.put("usuario", usuario);
         
      
         return "ejemplolistado.html";
     }
+    
 }

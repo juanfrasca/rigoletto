@@ -33,17 +33,15 @@
         </nav>
         <table class="table">
             <thead class="thead-dark">
-                <tr>
-                    <th th:value="${usuario.nombre}"></th>
-                    <th th:value="${usuario.apellido}"></th>
-                   
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="autor : ${usuario}">
+                <tr th:each="usuario : ${usuario}">
                     <td th:text="${usuario.nombre}"></td>
                     <td th:text="${usuario.apellido}"></td>
                      </tr>
+                    
+               
+            </thead>
+            <tbody>
+                
             </tbody>
         </table>
     </body>
