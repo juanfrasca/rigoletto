@@ -34,17 +34,16 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Acciones</th>
+                    <th th:value="${usuario.nombre}"></th>
+                    <th th:value="${usuario.apellido}"></th>
+                   
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="autor : ${autores}">
-                    <td th:text="${autor.nombre}"></td>
-                    <td th:text="${autor.apellido}"></td>
-                    <td><a th:href="@{/autor/actualizacion(id=${autor.id})}"><i class="fa fa-pencil"></i></a> - <a th:href="@{/autor/eliminar(id=${autor.id})}"><i class="fa fa-trash"></i></a></td>
-                </tr>
+                <tr th:each="autor : ${usuario}">
+                    <td th:text="${usuario.nombre}"></td>
+                    <td th:text="${usuario.apellido}"></td>
+                     </tr>
             </tbody>
         </table>
     </body>

@@ -4,6 +4,8 @@ import com.proyectoegg.rigoletto.entidades.Usuario;
 import com.proyectoegg.rigoletto.errores.ErrorServicio;
 import com.proyectoegg.rigoletto.repositorios.UsuarioRepositorio;
 import com.proyectoegg.rigoletto.servicios.UsuarioServicios;
+import static java.util.Collections.list;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -81,5 +83,16 @@ public class UsuarioControlador {
         }
 
         return "redirect:/index";
+    }
+    
+    @GetMapping("/mostrar")
+    public String mostrar(ModelMap modelo) {
+        List<Usuario> usuario;
+            usuario = user.findAll();
+            
+            modelo.put("usuario", usuario.get(0));
+        
+     
+        return "ejemplolistado.html";
     }
 }
