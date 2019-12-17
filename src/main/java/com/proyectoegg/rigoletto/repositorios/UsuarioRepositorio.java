@@ -28,4 +28,6 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
     //public List<DetallePedido> buscarDetalleProducto(@Param("producto,cantidad")String producto,String cantidad);
     @Query("SELECT c FROM Usuario c WHERE c.idUsuario = :idUsuario")
     public Usuario modificarUsuario(@Param("idUsuario") String idUsuario);
+    
+    
 }
