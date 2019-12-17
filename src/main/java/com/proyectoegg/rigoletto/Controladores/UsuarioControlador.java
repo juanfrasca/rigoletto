@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.FlashMap;
 
 @Controller
 @RequestMapping(value = "/rigoletto/usuario")
@@ -49,17 +50,20 @@ public class UsuarioControlador {
     @PostMapping("/ingreso")
     public String login(@RequestParam String email, @RequestParam String clave) throws ErrorServicio {
 
-        Usuario usa = new Usuario();
+        
         if (user.buscarPorMail(email) != null) {
             Usuario users = user.buscarPorMail(email);
 
             if (users.getClave().equals(clave)) {
-                if(usa.getTipoUsuario().equals("1") ){
+                if(users.getTipoUsuario().equals("1") ){
                      //return "paginaAdministrador";
+                    
                     return "redirect:/l";
                     
                 }else{
-                    return "redirect:/l";
+                    String id = users.getIdUsuario();
+                    
+                    return "redirect:/l?id="+id;
                 }
             }
         }

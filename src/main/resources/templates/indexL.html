@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
 
@@ -40,7 +40,7 @@
                         <a class="nav-link" style="color: white" href="/rigoletto/usuario/modificar">Editar Datos</a>
                     </li>
                     <li class="nav-item">
-                        <h5>Nombre usuario</h5>
+                        <h5 th:value="${usuario.nombre}"></h5>
                         </li>
                 </ul>
             </div>
