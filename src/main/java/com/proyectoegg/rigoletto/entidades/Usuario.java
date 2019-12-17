@@ -35,7 +35,7 @@ public class Usuario {
 
     private String zona;
 
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
     private TipoUsuario tipoUsuario;
 
     //public void crearUsuario() {

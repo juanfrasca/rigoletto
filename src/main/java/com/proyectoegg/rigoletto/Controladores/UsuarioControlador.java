@@ -24,50 +24,44 @@ public class UsuarioControlador {
     @Autowired
     private UsuarioRepositorio user;
 
-     @GetMapping("/registro")
+    @GetMapping("/registro")
     public String registro() throws ErrorServicio {
         return "registro.html";
     }
-     @GetMapping("/modificar")
+
+    @GetMapping("/modificar")
     public String modif() throws ErrorServicio {
         return "editarUsuario.html";
     }
-     @GetMapping("/logear")
+
+    @GetMapping("/logear")
     public String log() throws ErrorServicio {
         return "login.html";
     }
-     
-    
+
     @PostMapping("/registrar")
     public String registrar(@RequestParam String nombre, @RequestParam String apellido, @RequestParam String domicilio, @RequestParam String telefono, @RequestParam String email, @RequestParam String clave, @RequestParam String zona) throws ErrorServicio {
         us.crearUsuario(nombre, apellido, domicilio, telefono, email, clave, zona);
         return "redirect:/login";
-        
+
     }
-    
-      
+
     @PostMapping("/ingreso")
     public String login(@RequestParam String email, @RequestParam String clave) throws ErrorServicio {
 
-        Usuario usa = new Usuario();
         if (user.buscarPorMail(email) != null) {
             Usuario users = user.buscarPorMail(email);
 
             if (users.getClave().equals(clave)) {
-                if(usa.getTipoUsuario().equals("1") ){
-                     //return "paginaAdministrador";
-                    return "redirect:/l";
-                    
-                }else{
-                    return "redirect:/l";
-                }
+
             }
+            return "redirect:/l";
         }
         return "redirect:/rigoletto/usuario/registro";
     }
 
     @GetMapping("/editarUsuario")
-    public String actualizacion(@RequestParam(required = false) String id, @RequestParam(required = false) String error,@RequestParam String nombre,@RequestParam String apellido,@RequestParam String domicilio,@RequestParam String telefono,@RequestParam String email,@RequestParam String clave,@RequestParam String zona,ModelMap modelo) {
+    public String actualizacion(@RequestParam(required = false) String id, @RequestParam(required = false) String error, @RequestParam String nombre, @RequestParam String apellido, @RequestParam String domicilio, @RequestParam String telefono, @RequestParam String email, @RequestParam String clave, @RequestParam String zona, ModelMap modelo) {
         if (id != null) {
             Usuario usuario = us.buscarUsuarios(id);
             modelo.put("asuario", usuario);
@@ -79,29 +73,29 @@ public class UsuarioControlador {
 
         return "indexL.html";
     }
+
     @PostMapping("/registro")
-    public String actualizar(@RequestParam(required = false) String id, @RequestParam String nombre, @RequestParam String apellido,@RequestParam String domicilio,@RequestParam String telefono,@RequestParam String email,@RequestParam String clave,@RequestParam String zona,ModelMap modelo) {
+    public String actualizar(@RequestParam(required = false) String id, @RequestParam String nombre, @RequestParam String apellido, @RequestParam String domicilio, @RequestParam String telefono, @RequestParam String email, @RequestParam String clave, @RequestParam String zona, ModelMap modelo) {
 
         try {
-            us.modificar(id, nombre, apellido, domicilio,telefono,email,clave,zona);
+            us.modificar(id, nombre, apellido, domicilio, telefono, email, clave, zona);
         } catch (Exception ex) {
             return "redirect:indexL" + id + "&error=" + ex.getMessage();
         }
 
         return "redirect:/index";
     }
-    
+
     @GetMapping("/mostrar")
     public String mostrar(ModelMap modelo) {
         List<Usuario> usuario;
-            usuario = user.findAll();
-            
-            modelo.put("usuario", usuario);
-        
-     
+        usuario = user.findAll();
+
+        modelo.put("usuario", usuario);
+
         return "ejemplolistado.html";
     }
-    
+
     @GetMapping("/eliminar")
     public String eliminar(@RequestParam String id) {
         try {
@@ -111,5 +105,5 @@ public class UsuarioControlador {
             return "redirect:/autor/listado?error=No se pudo eliminar los datos del usuario que desea.";
         }
     }
-    
+
 }

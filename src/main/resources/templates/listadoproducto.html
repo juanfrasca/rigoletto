@@ -24,9 +24,9 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-            <form class="form-inline my-2 my-lg-0" >
+           <!-- <form action="rigoletto/administrador/mostrarlista" class="form-inline my-2 my-lg-0" method="GET" >
           
-            </form>
+            </form>-->
 
         </nav>
         <table class="table">
@@ -38,7 +38,7 @@
                 </tr>
                 <tr th:each="producto : ${producto}">
                     <td th:text="${producto.nombre}"></td>
-                    <td th:text="${producto.precio}"></td
+                    <td th:text="${producto.precio}"></td>
                     <td><a><i class="fa fa-pencil"></i></a> - <a><i class="fa fa-trash"></i></a></td>
                      </tr>
                     
