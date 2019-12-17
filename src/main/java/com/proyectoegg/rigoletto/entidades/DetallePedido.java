@@ -16,6 +16,12 @@ public class DetallePedido {
     private Integer idDetallePedido;
     
     @ManyToOne
+    private Usuario usuario;
+    
+    @ManyToOne
+    private Pedido pedido;
+    
+    @ManyToOne
     private Producto producto;
 
     @Column (nullable = false)
