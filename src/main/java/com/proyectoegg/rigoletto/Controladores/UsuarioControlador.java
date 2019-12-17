@@ -40,7 +40,6 @@ public class UsuarioControlador {
     
     @PostMapping("/registrar")
     public String registrar(@RequestParam String nombre, @RequestParam String apellido, @RequestParam String domicilio, @RequestParam String telefono, @RequestParam String email, @RequestParam String clave, @RequestParam String zona) throws ErrorServicio {
-        System.out.println("hola");
         us.crearUsuario(nombre, apellido, domicilio, telefono, email, clave, zona);
         return "redirect:/login";
         
@@ -94,6 +93,16 @@ public class UsuarioControlador {
         
      
         return "ejemplolistado.html";
+    }
+    
+    @GetMapping("/eliminar")
+    public String eliminar(@RequestParam String id) {
+        try {
+            us.borrarUsuario(id);
+            return "redirect:/autor/listado";
+        } catch (Exception ex) {
+            return "redirect:/autor/listado?error=No se pudo eliminar los datos del usuario que desea.";
+        }
     }
     
 }

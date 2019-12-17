@@ -1,4 +1,3 @@
-
 package com.proyectoegg.rigoletto.Controladores;
 
 import com.proyectoegg.rigoletto.servicios.UsuarioServicios;
@@ -25,24 +24,24 @@ public class LandingControler {
         return "login.html";
     }
 
-    
     @GetMapping("/l")
     public String loginL() {
         return "indexL.html";
     }
+
     @GetMapping("/listado")
     public String listado() {
         return "ejemplolistado.html";
     }
+
+    @GetMapping("/cargar")
+    public String producto() {
+        return "producto.html";
+    }
     
-    @GetMapping("/eliminar")
-    public String eliminar(@RequestParam String id) {
-        try {
-            usuarioservicio.borrarUsuario(id);
-            return "redirect:/autor/listado";
-        } catch (Exception ex) {
-            return "redirect:/autor/listado?error=No se pudo eliminar los datos del usuario que desea.";
-        }
+    @GetMapping("/listadoproducto")
+    public String listadoProducto(){
+        return "listadoproducto.html ";
     }
 
 }
