@@ -1,12 +1,8 @@
 package com.proyectoegg.rigoletto.Controladores;
 
-import com.proyectoegg.rigoletto.entidades.Usuario;
-import com.proyectoegg.rigoletto.repositorios.UsuarioRepositorio;
 import com.proyectoegg.rigoletto.servicios.UsuarioServicios;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,9 +13,6 @@ public class LandingControler {
 
     @Autowired
     private UsuarioServicios usuarioservicio;
-    
-    @Autowired
-    private UsuarioRepositorio user;
 
     @GetMapping("/")
     public String landing() {
@@ -30,17 +23,9 @@ public class LandingControler {
     public String login() {
         return "login.html";
     }
-    
+
     @GetMapping("/l")
-    public String loginL(@RequestParam(required = false) String id,ModelMap model) {
-        System.out.println(id);
-        Optional<Usuario> respuesta = user.findById(id);
-        if (respuesta.isPresent()) {
-            Usuario usuario = respuesta.get();
-            model.put("usuario", usuario);
-        }
-        
-        
+    public String loginL() {
         return "indexL.html";
     }
 

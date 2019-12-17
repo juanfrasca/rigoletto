@@ -26,7 +26,7 @@ public class ProdcutoControler {
    @PostMapping("/cargar")
    public String cargarProducto(@RequestParam String producto, @RequestParam Double precio ) throws ErrorServicio{
        productoServicio.crearProducto(producto, precio);
-       return "listadoproducto.html";
+       return "redirect:/";
        
    }
    
@@ -36,7 +36,6 @@ public class ProdcutoControler {
        producto = productoRepositorio.findAll();
        
        modelo.put("producto",producto);
-      
        
        return "listadoproducto.html";
    }
