@@ -49,11 +49,18 @@ public class UsuarioControlador {
     @PostMapping("/ingreso")
     public String login(@RequestParam String email, @RequestParam String clave) throws ErrorServicio {
 
+        Usuario usa = new Usuario();
         if (user.buscarPorMail(email) != null) {
             Usuario users = user.buscarPorMail(email);
 
             if (users.getClave().equals(clave)) {
-                return "redirect:/l";
+                if(usa.getTipoUsuario().equals("1") ){
+                     //return "paginaAdministrador";
+                    return "redirect:/l";
+                    
+                }else{
+                    return "redirect:/l";
+                }
             }
         }
         return "redirect:/rigoletto/usuario/registro";

@@ -36,14 +36,7 @@ public class UsuarioServicios {
 
     }
     
-    @Transactional
-    public void crearAdmin(){
-        Usuario adm = new Usuario();
-        adm.setNombre("admin");
-        adm.setClave("admin");
-        usuariorepositorio.save(adm);
-    }
-
+   
     @Transactional
     public void modificar(String id, String nombre, String apellido, String domicilio, String telefono, String email, String clave, String zona) throws ErrorServicio {
 
@@ -107,5 +100,7 @@ public class UsuarioServicios {
         if (zona == null || zona.isEmpty()) {
             throw new ErrorServicio("La zona no puede ser nulo.");
         }
+        
+     
     }
 }

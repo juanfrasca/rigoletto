@@ -36,6 +36,7 @@ public class ProdcutoControler {
        producto = productoRepositorio.findAll();
        
        modelo.put("producto",producto);
+      
        
        return "listadoproducto.html";
    }
