@@ -34,15 +34,22 @@
                             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                     <form action="/rigoletto/usuario/edit" method ="post" >
                     <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">                   
+                        <ul class="navbar-nav ml-auto">  
+                            <script>
+                                var id =  window.location;
+                            </script>
                             <li class="nav-item">
-                                <h5><a class="nav-link" style="color: white" href="/rigoletto/usuario/modificar">Editar Datos</a></h5>
+                                <input type="text" name="email" th:value="${usuario.email}" style="visibility:hidden">
+                                <button type="submit" class="btn btn-secondary">Modificar Usuario</button>                                
                             </li>
                             <li class="nav-item">
-                               <h5 class="nav-item" style="color:white" th:text="${usuario.email}"></h5>
+                               <h5 class="nav-item" style="color:white"  th:text="${usuario.email}"></h5>
                             </li>
                         </ul>
+                        
+                     </form>
                     </div>
                 </div>
             </nav>
