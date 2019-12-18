@@ -29,7 +29,11 @@
             </form>
 
         </nav>
-        <table class="table">
+        
+        <a  href="javascript:document.getElementById('usuario').style.display='none';document.getElementById('producto').style.display='block';void0">PEDIDOS</a>
+        <a  href="javascript:document.getElementById('usuario').style.display='block';document.getElementById('producto').style.display='none';void0">PRODUCTOS</a>
+         
+        <table class="table" id="usuario">
             <thead class="thead-dark">
                 <tr>
                     <th>Nombre</th>
@@ -46,31 +50,25 @@
                     <td th:text="${usuario.email}"></td>
                     <td th:text="${usuario.domicilio}"></td>
                     <td><a><i class="fa fa-pencil"></i></a> - <a><i class="fa fa-trash"></i></a></td>
-                     </tr>
-                    
-               
+                </tr>
             </thead>
             <tbody>
-                
             </tbody>
         </table>
-        
-        <table class="table">
+
+        <table class="table" id="producto" style="display: none">
             <thead class="thead-dark">
                 <tr>
                     <th>Nombre</th>
                     <th>Precio</th>
-                 </tr>
+                </tr>
                 <tr th:each="producto : ${producto}">
                     <td th:text="${producto.nombre}"></td>
                     <td th:text="${producto.precio}"></td>
                     <td><a><i class="fa fa-pencil"></i></a> - <a><i class="fa fa-trash"></i></a></td>
-                     </tr>
-                    
-               
+                </tr>
             </thead>
             <tbody>
-                
             </tbody>
         </table>
     </body>
