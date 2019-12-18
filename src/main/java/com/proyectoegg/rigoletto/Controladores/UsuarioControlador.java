@@ -1,7 +1,10 @@
 package com.proyectoegg.rigoletto.Controladores;
 
+import com.proyectoegg.rigoletto.entidades.Pedido;
+import com.proyectoegg.rigoletto.entidades.Producto;
 import com.proyectoegg.rigoletto.entidades.Usuario;
 import com.proyectoegg.rigoletto.errores.ErrorServicio;
+import com.proyectoegg.rigoletto.repositorios.ProductoRepositorio;
 import com.proyectoegg.rigoletto.repositorios.UsuarioRepositorio;
 import com.proyectoegg.rigoletto.servicios.UsuarioServicios;
 import static java.util.Collections.list;
@@ -23,6 +26,9 @@ public class UsuarioControlador {
 
     @Autowired
     private UsuarioRepositorio user;
+    
+    @Autowired
+    private ProductoRepositorio productorepositorio;
 
     @GetMapping("/registro")
     public String registro() throws ErrorServicio {
@@ -103,9 +109,12 @@ public class UsuarioControlador {
     @GetMapping("/mostrar")
     public String mostrar(ModelMap modelo) {
         List<Usuario> usuario;
+        List<Producto> producto;
         usuario = user.findAll();
+        producto = productorepositorio.findAll();
 
         modelo.put("usuario", usuario);
+        modelo.put("producto", producto );
 
         return "ejemplolistado.html";
     }

@@ -54,5 +54,24 @@
                 
             </tbody>
         </table>
+        
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                 </tr>
+                <tr th:each="producto : ${producto}">
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.precio}"></td>
+                    <td><a><i class="fa fa-pencil"></i></a> - <a><i class="fa fa-trash"></i></a></td>
+                     </tr>
+                    
+               
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
     </body>
 </html>
