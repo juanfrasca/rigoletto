@@ -34,7 +34,7 @@ public class LandingControler {
     @GetMapping("/l")
     public String loginL(@RequestParam(required = false) String id, ModelMap model) {
 
-        System.out.println(id);
+        
         Optional<Usuario> respuesta = user.findById(id);
         if (respuesta.isPresent()) {
             Usuario usuario = respuesta.get();

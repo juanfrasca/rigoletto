@@ -19,36 +19,36 @@
 
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-</head>
+        </head>
 
-<body background="img/descarga.jpg">
+        <body background="img/descarga.jpg">
 
-    <!-- ------------------- -->
-    <!-- BARRA DE NAVEGACION -->
-    <!-- ------------------- -->
+            <!-- ------------------- -->
+            <!-- BARRA DE NAVEGACION -->
+            <!-- ------------------- -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
 
-            <button class="navbar-toggler" type="button" darata-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">                   
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="/rigoletto/usuario/modificar">Editar Datos</a>
-                    </li>
-                    <li class="nav-item">
-                        <h5 th:text="${usuario.nombre}"></h5>
-                        </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                    <button class="navbar-toggler" type="button" darata-toggle="collapse" data-target="#navbarResponsive"
+                            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">                   
+                            <li class="nav-item">
+                                <h5><a class="nav-link" style="color: white" href="/rigoletto/usuario/modificar">Editar Datos</a></h5>
+                            </li>
+                            <li class="nav-item">
+                               <h5 class="nav-item" style="color:white" th:text="${usuario.email}"></h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
 
-    <!-- ------------------- -->
+            <!-- ------------------- -->
     <!--  TODO EL CONTENIDO  -->
     <!-- ------------------- -->
 
