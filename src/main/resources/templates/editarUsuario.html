@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
   <title>Login V13</title>
@@ -51,17 +51,17 @@
 
           <div class="wrap-input100 validate-input" data-validate="Name is required">
             <span class="label-input100">Nombre</span>
-            <input class="input100" type="text" name="nombre" placeholder="Nombre...">
+            <input class="input100" type="text" name="nombre" th:value="${usuario.nombre}">
             <span class="focus-input100"></span>
           </div>
           <div class="wrap-input100 validate-input" data-validate="Username is required">
             <span class="label-input100">Apellido</span>
-            <input class="input100" type="text" name="apellido" placeholder="Apellido...">
+            <input class="input100" type="text" name="apellido" th:value="${usuario.apellido}">
             <span class="focus-input100"></span>
           </div>
           <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
             <span class="label-input100">Mail</span>
-            <input class="input100" type="text" name="mail" placeholder="Mail...">
+            <input class="input100" type="text" name="mail" th:value="${usuario.email}">
             <span class="focus-input100"></span>
           </div>
 
@@ -69,13 +69,13 @@
 
           <div class="wrap-input100 validate-input" data-validate="Password is required">
             <span class="label-input100">contraseña</span>
-            <input class="input100" type="text" name="contraseña" placeholder="*************">
+            <input class="input100" type="password" name="contraseña"th:value="${usuario.clave}">
             <span class="focus-input100"></span>
           </div>
 
           <div class="wrap-input100 validate-input" data-validate="Repeat Password is required">
             <span class="label-input100">Repita su contraseña</span>
-            <input class="input100" type="text" name="contraseña2" placeholder="*************">
+            <input class="input100" type="password" name="contraseña2" th:value="${usuario.clave}">
             <span class="focus-input100"></span>
           </div>
 

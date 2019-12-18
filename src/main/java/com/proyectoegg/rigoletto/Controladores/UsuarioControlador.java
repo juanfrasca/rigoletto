@@ -47,20 +47,7 @@ public class UsuarioControlador {
     }
     @PostMapping("/edit")
     public String edit(@RequestParam String email, ModelMap model) throws ErrorServicio {
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println(email);
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+   
         if (user.buscarPorMail(email) != null) {
             Usuario users = user.buscarPorMail(email);
             model.put("usuario", users);
