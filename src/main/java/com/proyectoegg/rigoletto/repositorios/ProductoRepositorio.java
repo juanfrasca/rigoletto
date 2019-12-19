@@ -17,4 +17,7 @@ public interface ProductoRepositorio extends JpaRepository<Producto, String> {
     @Query("SELECT c FROM Producto c WHERE c.precio = :precio")
     public Producto buscarProductoPorPrecio (@Param("precio") String precio);
     
+    @Query("SELECT c FROM Producto c WHERE c.tipo_producto = :tipo_producto")
+    public Producto buscarProductoTipoProducto (@Param("tipo_producto") String precio);
+    
 }
