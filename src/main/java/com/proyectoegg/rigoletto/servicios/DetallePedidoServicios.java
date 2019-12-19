@@ -22,7 +22,7 @@ public class DetallePedidoServicios {
     
     public List<DetallePedido> listarDetallePedido() {
         return detallepedidorepositorio.findAll();
-    }
+    }             
 
     public void crearDetallePedido(@RequestParam String idUsuario, Producto producto, Integer cantidad) throws ErrorServicio {
 
