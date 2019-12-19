@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DetallePedidoRepositorio extends JpaRepository<DetallePedido, Integer> {
+public interface DetallePedidoRepositorio extends JpaRepository<DetallePedido, String> {
 
     //@Query("SELECT c FROM Producto c WHERE c.nombre = :nombre")
     //public Producto buscarProductoPorNombre(@Param("nombre") String nombre);
