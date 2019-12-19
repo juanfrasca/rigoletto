@@ -77,30 +77,18 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
-    /**
-     * @return the descripcion
-     */
     public String getDescripcion() {
         return descripcion;
     }
 
-    /**
-     * @param descripcion the descripcion to set
-     */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    /**
-     * @return the tipoProducto
-     */
     public String getTipoProducto() {
         return tipoProducto;
     }
 
-    /**
-     * @param tipoProducto the tipoProducto to set
-     */
     public void setTipoProducto(String tipoProducto) {
         this.tipoProducto = tipoProducto;
     }
