@@ -36,7 +36,7 @@ public class Usuario {
     private String zona;
 
     //@Enumerated(EnumType.STRING)
-    private TipoUsuario tipoUsuario;
+    private String tipoUsuario = "0";
 
     //public void crearUsuario() {
     //Esto va en el paquete de Servicios
@@ -163,14 +163,14 @@ public class Usuario {
     /**
      * @return the tipoUsuario
      */
-    public TipoUsuario getTipoUsuario() {
+    public String getTipoUsuario() {
         return tipoUsuario;
     }
 
     /**
      * @param tipoUsuario the tipoUsuario to set
      */
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+    public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
     

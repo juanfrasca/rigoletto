@@ -24,8 +24,8 @@ public class ProdcutoControler {
     private ProductoRepositorio productoRepositorio;
     
    @PostMapping("/cargar")
-   public String cargarProducto(@RequestParam String producto, @RequestParam Double precio ) throws ErrorServicio{
-       productoServicio.crearProducto(producto, precio);
+   public String cargarProducto(@RequestParam String producto, @RequestParam Double precio,@RequestParam String tipoProducto ) throws ErrorServicio{
+       productoServicio.crearProducto(producto, precio,tipoProducto);
        return "redirect:/";
        
    }
