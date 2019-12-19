@@ -16,20 +16,21 @@ public class ProductoServicios {
     
 
     @Transactional
-    public void crearProducto(String nombre, Double precio) throws ErrorServicio {
+    public void crearProducto(String nombre, Double precio, String tipoProducto) throws ErrorServicio {
 
-        validar(nombre, precio);
+        validar(nombre, precio,tipoProducto);
 
         Producto producto = new Producto();
 
         producto.setNombre(nombre);
         producto.setPrecio(precio);
+        producto.setTipoProducto(tipoProducto);
         productorepositorio.save(producto);
     }
 
     @Transactional
-    public void modificarProducto(String idProducto, String nombre, Double precio) throws ErrorServicio {
-        validar(nombre, precio);
+    public void modificarProducto(String idProducto, String nombre, Double precio, String tipoProducto) throws ErrorServicio {
+        validar(nombre, precio,tipoProducto);
         Optional<Producto> respuesta = productorepositorio.findById(idProducto);
         if (respuesta.isPresent()) {
             Producto producto = new Producto();
@@ -47,7 +48,7 @@ public class ProductoServicios {
 
     }
 
-    public void validar(String nombre, Double precio) throws ErrorServicio {
+    public void validar(String nombre, Double precio,String tipoProducto) throws ErrorServicio {
 
         if (nombre == null || nombre.isEmpty()) {
             throw new ErrorServicio("El nombre del producto no puede ser nulo.");
@@ -55,7 +56,10 @@ public class ProductoServicios {
 
         if (precio == null) {
             throw new ErrorServicio("El precio no puede ser nulo.");
-
+        }
+        
+        if(tipoProducto == null || tipoProducto.isEmpty()){
+            throw new ErrorServicio("El tipo de producto no puede ser nulo.");
         }
     }
 }
