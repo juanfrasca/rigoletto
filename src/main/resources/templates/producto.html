@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Carga de producto</title>
+    <link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
     <form action="/rigoletto/administrador/cargar" method="post">
         <p>Producto: <input type="text" name="producto" size="40"></p>
         <p>Precio:$ <input type="number" name="precio" min="00.00"></p>
+        <p>link img <input type="text" name="foto" size="60"></p>
+        <p>descripcion <input type="text" name="descripcion" size="40"></p>
+        <p>tipo producto <input type="text" name="tipoProducto" size="40"></p>
+     
+        <ul>
+            <li>1 hamburguesa</li>
+            <li>2 lomo</li>
+            <li>3 promo</li>
+            <li>4 pizza</li>
+            <li>5 ;O</li>
+            
+        </ul>
+        
+        
+        
         <p>
           <button  type="submit" class="login100-form-btn" >
 			Cargar
