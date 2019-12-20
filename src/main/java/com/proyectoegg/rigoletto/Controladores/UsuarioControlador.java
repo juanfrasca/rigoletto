@@ -69,11 +69,11 @@ public class UsuarioControlador {
             Usuario users = user.buscarPorMail(email);
 
             if (users.getClave().equals(clave)) {
-                //if (users.getTipoUsuario().equals("1")) {
-                if(false){
-                    return "redirect:/l?id="+users.getIdUsuario();
+                if (users.getTipoUsuario().equals("1")) {
+                return "redirect:/la?id="+users.getIdUsuario();
+                    
                 }else{
-                    return "redirect:/la?id="+users.getIdUsuario();
+                    return "redirect:/l?id="+users.getIdUsuario();
                 }               
             }           
         }
