@@ -77,5 +77,31 @@
             <tbody>
             </tbody>
         </table>
+        <table class="table" id="producto" style="display: none">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Domicilio</th>
+                    <th>Telefono</th>
+                    <th>Estado</th>
+                    <th>Fecha-Hora</th>
+                    <th>Medio de pago</th>
+                    <th>Telefono</th>
+                    <th>Usuario</th>
+                </tr>
+                <tr th:each="pedido : ${pedido}">
+                    <td th:text="${pedido.docimilio}"></td>
+                    <td th:text="${pedido.telefono}"></td>
+                    <td><a><i class="fa fa-pencil"></i></a> - <a><i class="fa fa-trash"></i></a></td>
+                </tr>
+                <tr th:each="usuario : ${usuario}">
+                    <td th:text="${usuario.idUsuario}"></td>
+                    <td th:text="${usuario.email}"></td>
+                    
+                    <td><a><i class="fa fa-pencil"></i></a> - <a><i class="fa fa-trash"></i></a></td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </body>
 </html>
