@@ -62,4 +62,13 @@ public class ProductoServicios {
             throw new ErrorServicio("El tipo de producto no puede ser nulo.");
         }
     }
+    
+    public void borrarProducto() {
+    /*Esto va en el paquete de Servicios*/
+    }
+
+    public void listarProducto() {
+    /*Esto va en el paquete de Servicios*/
+    }
+
 }

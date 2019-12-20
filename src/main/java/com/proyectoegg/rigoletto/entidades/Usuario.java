@@ -1,10 +1,7 @@
 package com.proyectoegg.rigoletto.entidades;
 
-import com.proyectoegg.rigoletto.enumeraciones.TipoUsuario;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
@@ -14,45 +11,28 @@ public class Usuario {
 
     @Id
     @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid",strategy = "uuid2")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idUsuario;
-    
-    @Column (nullable = false)
+
+    @Column(nullable = false)
     private String nombre;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String apellido;
 
     private String domicilio;
 
     private String telefono;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String email;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String clave;
 
     private String zona;
 
-    //@Enumerated(EnumType.STRING)
     private String tipoUsuario = "0";
-
-    //public void crearUsuario() {
-    //Esto va en el paquete de Servicios
-    //}
-
-    //public void modificarUsuario() {
-    //Esto va en el paquete de Servicios
-    //}
-
-    //public void borrarUsuario() {
-    //Esto va en el paquete de Servicios
-    //}
-
-    public void listarUsuario() {
-    /*Esto va en el paquete de Servicios*/
-    }
 
     /**
      * @return the nombre
@@ -173,6 +153,5 @@ public class Usuario {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
-    
-    
+
 }

@@ -40,4 +40,21 @@ public class PedidoServicios {
         }
         return monto;
     }
+    
+    public void crearPedido() {
+        /*Esto va en el paquete de Servicios*/
+    }
+
+    public void modificarPedido() {
+        /*Esto va en el paquete de Servicios*/
+    }
+
+    public void borrarPedido() {
+        /*Esto va en el paquete de Servicios*/
+    }
+
+    public void listarPedido() {
+        /*Esto va en el paquete de Servicios*/
+    }
+
 }

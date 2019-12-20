@@ -1,4 +1,3 @@
-
 package com.proyectoegg.rigoletto.entidades;
 
 import com.proyectoegg.rigoletto.enumeraciones.Estado;
@@ -53,33 +52,6 @@ public class Pedido implements Serializable {
             fetch = FetchType.EAGER)
     private List<DetallePedido> productos;
 
-    public void crearPedido() {
-        /*Esto va en el paquete de Servicios*/
-    }
-
-    public void modificarPedido() {
-        /*Esto va en el paquete de Servicios*/
-    }
-
-    public void borrarPedido() {
-        /*Esto va en el paquete de Servicios*/
-    }
-
-    public void listarPedido() {
-        /*Esto va en el paquete de Servicios*/
-    }
-
-    /*
-    @Transient
-    public double getmontoTotal() {
-        double monto = 0;
-        for (DetallePedido producto : productos) {
-            monto += producto.getCantidad() * producto.getProducto().getPrecio();
-        }
-        return monto;
-    }
-    */
-    
     public Integer getIdPedido() {
         return idPedido;
     }
